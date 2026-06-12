@@ -1,0 +1,16 @@
+{
+  "name": "webrtc-demo",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-basic-ssl": "^2.3.0",
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "peerjs": "^1.5.4"
+  }
+}
