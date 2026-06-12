@@ -60,23 +60,30 @@ loginBtn.onclick = async () => {
   peer.on('open', async (id) => {
     myPeerId = id;
     
-    // Register user in Firestore
-    const userRef = doc(db, 'users', myUid);
-    await setDoc(userRef, {
-      name: myName,
-      peerId: myPeerId,
-      timestamp: serverTimestamp()
-    });
+    try {
+      // Register user in Firestore
+      const userRef = doc(db, 'users', myUid);
+      await setDoc(userRef, {
+        name: myName,
+        peerId: myPeerId,
+        timestamp: serverTimestamp()
+      });
 
-    // Handle Window Close to remove user
-    window.addEventListener('beforeunload', () => {
-      deleteDoc(userRef);
-      peer.destroy();
-    });
+      // Handle Window Close to remove user
+      window.addEventListener('beforeunload', () => {
+        deleteDoc(userRef);
+        peer.destroy();
+      });
 
-    setupPeerListeners();
-    listenForContacts();
-    showScreen('contacts');
+      setupPeerListeners();
+      listenForContacts();
+      showScreen('contacts');
+    } catch (err) {
+      console.error(err);
+      alert('Firebase Error: ' + err.message + '\n\nDid you forget to enable Firestore or update your Security Rules?');
+      loginBtn.disabled = false;
+      loginBtn.textContent = 'Join Network';
+    }
   });
 
   peer.on('error', (err) => {
