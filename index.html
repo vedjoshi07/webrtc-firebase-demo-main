@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="./assets/index-CCCgGAGE.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CRrxjKpl.css">
+    <script type="module" crossorigin src="./assets/index-Bd-r81ih.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CR0BVRpl.css">
   </head>
   <body>
 
@@ -28,9 +28,27 @@
             </svg>
           </div>
           <h1>VideoLink</h1>
-          <p class="login-sub">Video calls, simple and free.</p>
-          <input type="text" id="usernameInput" placeholder="Your name" class="input" maxlength="20" />
-          <button id="loginBtn" class="btn-primary">Join</button>
+          <p class="login-sub">Sign in or create an account</p>
+
+          <div class="auth-tabs">
+            <button class="auth-tab active" data-auth="signin">Sign In</button>
+            <button class="auth-tab" data-auth="signup">Sign Up</button>
+          </div>
+
+          <!-- Sign In -->
+          <div id="signinForm" class="auth-form">
+            <input type="email" id="signinEmail" placeholder="Email" class="input" autocomplete="email" />
+            <input type="password" id="signinPassword" placeholder="Password" class="input" autocomplete="current-password" />
+            <button id="signinBtn" class="btn-primary">Sign In</button>
+          </div>
+
+          <!-- Sign Up -->
+          <div id="signupForm" class="auth-form hidden">
+            <input type="text" id="signupName" placeholder="Display name" class="input" maxlength="20" />
+            <input type="email" id="signupEmail" placeholder="Email" class="input" autocomplete="email" />
+            <input type="password" id="signupPassword" placeholder="Password (6+ chars)" class="input" autocomplete="new-password" />
+            <button id="signupBtn" class="btn-primary">Create Account</button>
+          </div>
         </div>
       </div>
     </div>
