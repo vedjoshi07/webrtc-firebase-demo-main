@@ -196,5 +196,21 @@
       </div>
     </div>
 
+    <style>
+      body { margin:0; background:#111318; font-family:sans-serif; color:#e9edef; height:100%; overflow:hidden; }
+      .screen { display:none; position:fixed; inset:0; }
+      .screen.active { display:flex; z-index:1; }
+      .login-bg { position:absolute; inset:0; background:radial-gradient(ellipse 120% 70% at 50% -30%,rgba(37,211,102,0.12) 0%,transparent 60%); }
+      .login-inner { display:flex; align-items:center; justify-content:center; width:100%; height:100%; padding:2rem; }
+      .login-card { width:100%; max-width:360px; text-align:center; }
+      .login-icon { width:64px;height:64px;border-radius:18px;background:rgba(37,211,102,0.12);color:#25D366;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem; }
+      .login-card h1 { font-size:1.6rem;font-weight:700;margin-bottom:0.35rem;color:#e9edef; }
+      .login-sub { color:rgba(233,237,239,0.6);font-size:0.9rem;margin-bottom:2rem; }
+      .input { width:100%;padding:0.85rem 1rem;background:#1a1d24;border:1px solid rgba(255,255,255,0.06);border-radius:12px;color:#e9edef;font-size:0.95rem;font-family:inherit;outline:none;box-sizing:border-box; }
+      .input:focus { border-color:#25D366;box-shadow:0 0 0 3px rgba(37,211,102,0.12); }
+      .btn-primary { display:inline-flex;align-items:center;justify-content:center;padding:0.85rem 2rem;background:#25D366;color:#fff;border:none;border-radius:12px;font-family:inherit;font-size:0.95rem;font-weight:600;cursor:pointer;width:100%;margin-top:0.75rem; }
+      .toast-container { position:fixed;top:1rem;left:50%;transform:translateX(-50%);z-index:999; }
+      .hidden { display:none!important; }
+    </style>
   </body>
 </html>
